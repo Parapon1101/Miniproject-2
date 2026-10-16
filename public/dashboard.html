@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจัดการข้อมูลประวัตินักศึกษา</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container dashboard-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h2>🎓 ประวัตินักศึกษา</h2>
+      <button id="logout-btn" style="width: auto; padding: 6px 12px; margin: 0;" class="btn-danger">ออกจากระบบ</button>
+    </div>
+    
+    <p style="text-align: center; margin-bottom: 20px; color: #666;">
+      ยินดีต้อนรับคุณ, <span id="user-display" style="font-weight: bold; color: var(--primary-color);"></span>
+    </p>
+
+    <!-- ฟอร์มสำหรับ เพิ่ม/แก้ไข ข้อมูล -->
+    <form id="student-form">
+      <div class="form-group">
+        <label for="studentId">รหัสนักศึกษา</label>
+        <input type="text" id="studentId" placeholder="เช่น 66xxxxxxx" required>
+      </div>
+      <div class="form-group">
+        <label for="fullName">ชื่อ - นามสกุล</label>
+        <input type="text" id="fullName" placeholder="ชื่อ-นามสกุล" required>
+      </div>
+      <div class="form-group">
+        <label for="faculty">คณะที่เรียน</label>
+        <input type="text" id="faculty" placeholder="เช่น คณะวิศวกรรมศาสตร์" required>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">วันเดือนปีเกิด</label>
+        <input type="date" id="dateOfBirth" required>
+      </div>
+      <div class="form-group">
+        <label for="province">มาจากจังหวัดอะไร</label>
+        <input type="text" id="province" placeholder="เช่น กาญจนบุรี" required>
+      </div>
+      <button type="submit" id="submit-btn">💾 บันทึกข้อมูลประวัติ</button>
+    </form>
+
+    <!-- ส่วนแสดงผลข้อมูลเมื่อบันทึกแล้ว (Read / Delete) -->
+    <div id="profile-display" class="profile-card" style="display: none;">
+      <h3>📋 ข้อมูลประวัติของคุณในระบบ</h3>
+      <div class="profile-item">รหัสนักศึกษา: <span id="view-studentId"></span></div>
+      <div class="profile-item">ชื่อ-นามสกุล: <span id="view-fullName"></span></div>
+      <div class="profile-item">คณะที่เรียน: <span id="view-faculty"></span></div>
+      <div class="profile-item">วันเดือนปีเกิด: <span id="view-dob"></span></div>
+      <div class="profile-item">มาจากจังหวัด: <span id="view-province"></span></div>
+      
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <button id="edit-btn" style="background-color: var(--secondary-color);">✏️ แก้ไขข้อมูล</button>
+        <button id="delete-btn" class="btn-danger">🗑️ ลบข้อมูลทั้งหมด</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

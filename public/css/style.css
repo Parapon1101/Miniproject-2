@@ -1,0 +1,135 @@
+:root {
+  --primary-color: #2b4c7e;
+  --secondary-color: #4a6fa5;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Helvetica Neue', Arial;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* กล่อง Container หลัก */
+.container {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+}
+
+.dashboard-container {
+  max-width: 650px;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* จัดฟอร์มกรอกข้อมูล */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+/* ปุ่มกดสไตล์ Modern */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+.btn-danger:hover {
+  background-color: #c9302c;
+}
+
+/* ส่วนสลับหน้าจอ Login / Register */
+.switch-form {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.switch-form a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* การแสดงผลข้อมูลในหน้า Dashboard */
+.profile-card {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: #fafafa;
+  margin-top: 20px;
+}
+
+.profile-item {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 5px;
+}
+
+.profile-item span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
